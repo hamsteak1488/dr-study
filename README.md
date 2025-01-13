@@ -64,7 +64,7 @@
 |AI 사회자 생성|AI 사회자 목록|
 |<img src="./Docs/readme_gif/main-login.gif">|<img src="./Docs/readme_gif/main-racer-list.gif">|
 |스터디 그룹 생성|스터디 그룹 목록|
-|<img src="./Docs/readme_gif/main-racer-buy.gif">|<img src="./Docs/readme_gif/main-profile.gif">|
+|<img src="./Docs/readme_gif/main-racer-buy.gif">|<img src="https://github.com/user-attachments/assets/7663ca95-1fc4-4d5d-adfd-e74692ed8565">|
 |스터디 그룹 가입 신청|스터디 그룹 탈퇴|
 |<img src="./Docs/readme_gif/single-play.gif">|<img src="./Docs/readme_gif/main-rank.gif">|
 |라이브 스터디 생성|라이브 스터디 로비(초대)|
