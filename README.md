@@ -61,12 +61,10 @@
 |<img src="https://github.com/user-attachments/assets/2a000a23-1a34-4bba-80b0-f083e3a61188">|<img src="https://github.com/user-attachments/assets/e47c7518-fedf-4f51-b5fe-24c7e6a50381">|
 |스터디그룹 생성|스터디그룹 탈퇴|
 |<img src="https://github.com/user-attachments/assets/e90c795f-cbcf-4339-ba4d-b297d8aa7101">|<img src="https://github.com/user-attachments/assets/7ffa6493-f0e8-402b-bf4e-e93a879b6681">|
-|AI 사회자 생성|AI 사회자 목록|
-|<img src="./Docs/readme_gif/main-login.gif">|<img src="./Docs/readme_gif/main-racer-list.gif">|
-|스터디 그룹 생성|스터디 그룹 목록|
-|<img src="./Docs/readme_gif/main-racer-buy.gif">|<img src="https://github.com/user-attachments/assets/7663ca95-1fc4-4d5d-adfd-e74692ed8565">|
-|스터디 그룹 가입 신청|스터디 그룹 탈퇴|
-|<img src="./Docs/readme_gif/single-play.gif">|<img src="./Docs/readme_gif/main-rank.gif">|
+|AI 사회자 생성|AI 사회자 프롬프트 설정|
+|<img src="https://github.com/user-attachments/assets/239e8ad6-7098-4ec6-bc4d-036ac19fffd8">|<img src="https://github.com/user-attachments/assets/35a808ca-0174-46b2-a0ef-5ddd9af639b2">|
+|스터디 그룹 가입 신청|스터디 그룹 목록|
+|<img src="https://github.com/user-attachments/assets/d2f23102-b506-4b3d-8647-d325a5255c70">|<img src="https://github.com/user-attachments/assets/7663ca95-1fc4-4d5d-adfd-e74692ed8565">|
 |라이브 스터디 생성|라이브 스터디 로비(초대)|
 |<img src="./Docs/readme_gif/multi-play.gif">|<img src="./Docs/readme_gif/single-single-play3.gif">|
 |라이브 스터디 시작|라이브 스터디 진행|
