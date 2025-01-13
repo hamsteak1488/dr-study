@@ -65,10 +65,8 @@
 |<img src="https://github.com/user-attachments/assets/239e8ad6-7098-4ec6-bc4d-036ac19fffd8">|<img src="https://github.com/user-attachments/assets/35a808ca-0174-46b2-a0ef-5ddd9af639b2">|
 |스터디 그룹 가입 신청|스터디 그룹 목록|
 |<img src="https://github.com/user-attachments/assets/d2f23102-b506-4b3d-8647-d325a5255c70">|<img src="https://github.com/user-attachments/assets/7663ca95-1fc4-4d5d-adfd-e74692ed8565">|
-|라이브 스터디 생성|라이브 스터디 로비(초대)|
-|<img src="./Docs/readme_gif/multi-play.gif">|<img src="./Docs/readme_gif/single-single-play3.gif">|
-|라이브 스터디 시작|라이브 스터디 진행|
-|<img src="./Docs/readme_gif/multi-play.gif">|<img src="./Docs/readme_gif/single-single-play3.gif">|
+|스터디 예시(2인 면접)|스터디 예시(4인 스터디)|
+|<img src="https://github.com/user-attachments/assets/813cf781-462d-4cff-91f2-c8ece8293f84">|<img src="https://github.com/user-attachments/assets/887bcfb0-0387-47e9-825b-64b7f88af29e">|
 
 
 <br/>
