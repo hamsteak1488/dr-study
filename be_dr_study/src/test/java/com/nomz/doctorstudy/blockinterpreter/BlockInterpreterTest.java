@@ -1,6 +1,8 @@
 package com.nomz.doctorstudy.blockinterpreter;
 
 import com.nomz.doctorstudy.blockinterpreter.blockexecutors.BlockVariable;
+import com.nomz.doctorstudy.moderator.CharacterType;
+import com.nomz.doctorstudy.moderator.VoiceType;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -37,16 +40,24 @@ class BlockInterpreterTest {
                 """
                 phase(1) {
                     log(string_concat('hello ', 'world! ', '반갑습니다 ', '여러분들!'));
-                    wait(3000);
+                    wait(3);
                     log('hi');
-                    wait(3000);
+                    wait(3);
                     log(int_to_string(get_int_variable('current_phase')));
                 }
                 """;
 
         long id = getProcessContextIdSequence();
 
-        blockInterpreter.init(id, script, varMap);
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, varMap, conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -65,8 +76,16 @@ class BlockInterpreterTest {
         varMap1.put("var1", "var5");
         varMap1.put("var5", "Thread1");
 
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
         long id1 = getProcessContextIdSequence();
-        blockInterpreter.init(id1, script1, varMap1);
+        blockInterpreter.init(id1, script1, varMap1, conferenceContext);
 
 
         String script2 =
@@ -82,7 +101,7 @@ class BlockInterpreterTest {
         varMap2.put("var10", "Thread2");
 
         long id2 = getProcessContextIdSequence();
-        blockInterpreter.init(id2, script2, varMap2);
+        blockInterpreter.init(id2, script2, varMap2, conferenceContext);
 
         blockInterpreter.interpret(id1);
         blockInterpreter.interpret(id2);
@@ -104,7 +123,16 @@ class BlockInterpreterTest {
         Map<String, Object> varMap1 = new HashMap<>();
         varMap1.put("var1", 1);
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, varMap1);
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, varMap1, conferenceContext);
         blockInterpreter.interpret(id);
     }
     
@@ -122,7 +150,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -147,7 +184,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -166,7 +212,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -187,7 +242,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -209,7 +273,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -229,7 +302,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
     
@@ -248,7 +330,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, "", Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, "", Map.of(), conferenceContext);
         blockInterpreter.interpret(id, ProcessMode.PROGRAMME);
     }
     
@@ -262,7 +353,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -276,7 +376,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
     
@@ -290,7 +399,16 @@ class BlockInterpreterTest {
                 }
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, script, Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -303,7 +421,16 @@ phase(1) {  let_avatar_speak( gpt_query( string_concat( '입력
 ' ) ) );}
                 """;
         long id = getProcessContextIdSequence();
-        blockInterpreter.init(id, "", Map.of());
+
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, "", Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -313,13 +440,21 @@ phase(1) {  let_avatar_speak( gpt_query( string_concat( '입력
         String script =
                 """
                 phase(1) {
-                    log(string_concat('hel\\nlo ', 'w\\'orld! ', '반갑\\,습니다 ', '여러\t분들!'));
+                    log(string_concat('hel\\\\nlo ', 'w\\'orld! ', '반갑,습니다 ', '여러\\\\t분들!'));
                 }
                 """;
 
         long id = getProcessContextIdSequence();
 
-        blockInterpreter.init(id, script, Map.of());
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
     
@@ -335,7 +470,15 @@ phase(1) {  let_avatar_speak( gpt_query( string_concat( '입력
 
         long id = getProcessContextIdSequence();
 
-        blockInterpreter.init(id, script, Map.of(BlockVariable.STUDY_SUBJECT.getToken(), "스터디 주제!!!"));
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(BlockVariable.STUDY_SUBJECT.getToken(), "스터디 주제!!!"), conferenceContext);
         blockInterpreter.interpret(id);
     }
 
@@ -351,7 +494,15 @@ phase(1) {  let_avatar_speak( gpt_query( string_concat( '입력
 
         long id = getProcessContextIdSequence();
 
-        blockInterpreter.init(id, script, Map.of());
+        ConferenceContext conferenceContext = ConferenceContext.builder()
+                .prePrompt("")
+                .subject("테스트 주제!")
+                .participantInfoList(List.of())
+                .voiceType(VoiceType.MEN_HIGH)
+                .characterType(CharacterType.FRIEND)
+                .build();
+
+        blockInterpreter.init(id, script, Map.of(), conferenceContext);
         blockInterpreter.interpret(id);
     }
 }

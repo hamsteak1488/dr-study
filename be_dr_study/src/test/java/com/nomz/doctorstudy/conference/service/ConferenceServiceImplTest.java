@@ -1,5 +1,6 @@
 package com.nomz.doctorstudy.conference.service;
 
+import com.nomz.doctorstudy.conference.ConferenceEvent;
 import com.nomz.doctorstudy.conference.entity.Conference;
 import com.nomz.doctorstudy.conference.entity.ConferenceMemberHistory;
 import com.nomz.doctorstudy.conference.repository.ConferenceMemberInviteRepository;
@@ -67,7 +68,7 @@ class ConferenceServiceImplTest {
 
             memberRepository.save(member);
 
-            ConferenceMemberHistory conferenceMemberHistory = ConferenceMemberHistory.of(conference, member);
+            ConferenceMemberHistory conferenceMemberHistory = ConferenceMemberHistory.of(conference, member, ConferenceEvent.JOIN);
             conferenceMemberHistoryRepository.save(conferenceMemberHistory);
         }
 
@@ -118,7 +119,7 @@ class ConferenceServiceImplTest {
 
 
         // when
-        ConferenceMemberHistory conferenceMemberHistory = ConferenceMemberHistory.of(conference, hostMember);
+        ConferenceMemberHistory conferenceMemberHistory = ConferenceMemberHistory.of(conference, hostMember, ConferenceEvent.JOIN);
         conferenceMemberHistoryRepository.save(conferenceMemberHistory);
 
         // then
